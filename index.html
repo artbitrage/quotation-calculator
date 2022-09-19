@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en-US"> <![endif]-->
+<!--[if IE 7]><html lang="en-US"> <![endif]-->
+<!--[if IE 8]><html lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+
+    <meta https-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta https-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Quotation Calculator</title>
+    <meta name="description" content="Simple animated quotation calculator. Copyright © 2022 Konti Studio." />
+    <meta name="keywords" content="quotation, calculator" />
+
+
+    <!-- Website's Author & Publisher
+    ================================================== -->
+
+    <meta name="author" content="Syafiq Hadzir" />
+    <link rel="author" href="https://syafiqhadzir.dev/" />
+    <link rel="publisher" href="https://github.com/artbitrage" />
+
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+
+    <meta name="viewport" content="width=device-width, height=device-height,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+
+    <!-- CSS
+    ================================================== -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha512-Dop/vW3iOtayerlYAqCgkVr2aTr2ErwwTYOvRFUpzl2VhCMJyjQF0Q9TjUXIo6JhuM/3i0vVEt2e/7QQmnHQqw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha512-iy8EXLW01a00b26BaqJWaCmk9fJ4PsMdgNRqV96KwMPSH+blO82OHzisF/zQbRIIi8m0PiO10dpS0QxrcXsisw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/2.8.7/jquery.mCustomScrollbar.min.css"
+        integrity="sha512-VrdNynCtusfX0ObsbNfn0upStXEtzJNjzj5/dElfUq9z4fAanIldogStNzKf/46x9cOSlvqTLXkb4YA8Cdg3cg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jQueryFormStyler/1.7.8/jquery.formstyler.min.css"
+        integrity="sha512-xagf1DGX5QMHhtCsdPglIkz/XNM5wijkpby48UqtY4MuI4/09jgJrTPENPRBvZnwtd5vnVbYkm5LrX1oX7EMNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,400italic&subset=cyrillic,latin" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<!-- Body
+================================================== -->
+
+<body class=" locale-en">
+    <div class="main-wrapper">
+        <header class="header">
+            <a href="#" class="logo" title="logo"></a>
+            <div class="header-links navbar-right">
+                <div class="dropdown">
+                    <a id="dLabel" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" role="button"
+                        aria-expanded="false">Follow us</a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><a href="#" target="_blank" class="btn-subscribe btn-fb" data-network="facebook"><i
+                                    class="fa fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="#" target="_blank" class="btn-subscribe btn-tw" data-network="twitter"><i
+                                    class="fa fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#" target="_blank" class="btn-subscribe btn-g" data-network="gplus"><i
+                                    class="fa fa-google-plus"></i> Google Plus</a></li>
+                        <li><a href="#" target="_blank" class="btn-subscribe btn-in" data-network="instagram"><i
+                                    class="fa fa-instagram"></i>
+                                Instagram</a></li>
+                        <li class="counter subscribe-counter"><span>#</span> Subscribers & Followers</li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0);" class="show-menu"></a>
+            </div>
+        </header>
+
+
+        <!-- Order & Application
+        ================================================== -->
+
+        <section class="btm-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-8 column-main">
+                        <section class="prices">
+                            <div role="tabpanel">
+                                <ul class="nav nav-tabs tabs" role="tablist">
+                                    <li role="presentation" class="active">
+                                        <a href="#design-1" aria-controls="design-1" role="tab"
+                                            data-toggle="tab">Design</a>
+                                    </li>
+                                    <li role="presentation" class="">
+                                        <a href="#development" aria-controls="development" role="tab"
+                                            data-toggle="tab">Development</a>
+                                    </li>
+                                    <li role="presentation" class="">
+                                        <a href="#seo" aria-controls="seo" role="tab" data-toggle="tab">SEO</a>
+                                    </li>
+                                    <li role="presentation" class="">
+                                        <a href="#website-support" aria-controls="website-support" role="tab"
+                                            data-toggle="tab">Website support</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+
+
+                                    <!-- Design
+                                    ================================================== -->
+
+                                    <div role="tabpanel" class="tab-pane active" id="design-1">
+                                        <div class="text">In this section, you can see the approximate prices on the
+                                            design. If you want to know the accurate prices for the design according to
+                                            your brief description, please write us about your project on the <a
+                                                href="#">contacts</a> page.</div>
+                                        <div class="table-responsive">
+                                            <table class="table prices-table prices-table-general">
+                                                <tr class="price-row" data-id="41">
+                                                    <td class="services">Logo</td>
+                                                    <td class="time" data-time="7">+ 7 days</td>
+                                                    <td class="cost" data-price="500" data-percent="0">MYR 500</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                        <h2 class="lower">Website and UI design prices</h2>
+                                        <div class="table-responsive">
+                                            <table class="table prices-table">
+                                                <tr class="price-row" data-id="42">
+                                                    <td class="services">First page</td>
+                                                    <td class="time" data-time="7">+ 7 days</td>
+                                                    <td class="cost" data-price="1000" data-percent="0">MYR 1000</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="price-row" data-id="43">
+                                                    <td class="services">Next page</td>
+                                                    <td class="time" data-time="1-3">+ 1-3 days</td>
+                                                    <td class="cost" data-price="300" data-percent="0">MYR 300</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="price-row" data-id="44">
+                                                    <td class="services">Responsive pages, per page</td>
+                                                    <td class="time" data-time="1">+ 1 days</td>
+                                                    <td class="cost" data-price="0" data-percent="50">+ 50%</td>
+                                                    <td class="order-quantity">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox">
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="price-row" data-id="45">
+                                                    <td class="services">Convert a page to HTML, per page</td>
+                                                    <td class="time" data-time="1">+ 1 days</td>
+                                                    <td class="cost" data-price="0" data-percent="50">+ 50%</td>
+                                                    <td class="order-quantity">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox">
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                        <h2 class="lower">Design prices for mobile devices</h2>
+                                        <div class="table-responsive">
+                                            <table class="table prices-table">
+                                                <tr class="price-row" data-id="46">
+                                                    <td class="services">First screen design</td>
+                                                    <td class="time" data-time="3">+ 3 days</td>
+                                                    <td class="cost" data-price="1000" data-percent="0">MYR 1000</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="price-row" data-id="47">
+                                                    <td class="services">Next screen</td>
+                                                    <td class="time" data-time="1-2">+ 1-2 days</td>
+                                                    <td class="cost" data-price="300" data-percent="0">MYR 300</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="price-row" data-id="48">
+                                                    <td class="services">Tablet version, per screen</td>
+                                                    <td class="time" data-time="1">+ 1 days</td>
+                                                    <td class="cost" data-price="0" data-percent="75">+ 75%</td>
+                                                    <td class="order-quantity">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox">
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="price-row" data-id="49">
+                                                    <td class="services">Versions for 2 platforms, per screen</td>
+                                                    <td class="time" data-time="1">+ 1 days</td>
+                                                    <td class="cost" data-price="0" data-percent="50">+ 50%</td>
+                                                    <td class="order-quantity">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox">
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Development
+                                    ================================================== -->
+
+                                    <div role="tabpanel" class="tab-pane " id="development">
+                                        <div class="text">The minimum price for the site development is indicated in
+                                            this section. If you want to know the accurate prices for the development
+                                            according to your brief description, please write us about your project on
+                                            the <a href="#">contacts</a> page.</div>
+                                        <div class="table-responsive">
+                                            <table class="table prices-table prices-table-general">
+                                                <tr class="price-row" data-id="51">
+                                                    <td class="services">Business card website from </td>
+                                                    <td class="time" data-time="7-14">+ 7-14 days</td>
+                                                    <td class="cost" data-price="1000" data-percent="0">MYR 1000</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="price-row" data-id="52">
+                                                    <td class="services">Corporate website</td>
+                                                    <td class="time" data-time="7-18">+ 7-18 days</td>
+                                                    <td class="cost" data-price="1500" data-percent="0">MYR 1500</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="price-row" data-id="53">
+                                                    <td class="services">E-commerce</td>
+                                                    <td class="time" data-time="14-21">+ 14-21 days</td>
+                                                    <td class="cost" data-price="2000" data-percent="0">MYR 2000</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="price-row" data-id="54">
+                                                    <td class="services">Working hour</td>
+                                                    <td class="time" data-time="0"></td>
+                                                    <td class="cost" data-price="50" data-percent="0">MYR 50</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Order & Application
+                                    ================================================== -->
+
+                                    <div role="tabpanel" class="tab-pane " id="seo">
+                                        <div class="text">In this section, you can see the minimum prices for services.
+                                            If you want to know the accurate prices for the design according to your
+                                            brief description, please write us about your project on the <a
+                                                href="#">contacts</a> page.</div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane " id="website-support">
+                                        <div class="text">We provide support only for our projects</div>
+                                        <div class="table-responsive">
+                                            <table class="table prices-table prices-table-general">
+                                                <tr class="price-row" data-id="55">
+                                                    <td class="services">Average monthly cost</td>
+                                                    <td class="time" data-time="0"></td>
+                                                    <td class="cost" data-price="200" data-percent="0">MYR 200</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <h2 class="lower">In addition</h2>
+                                        <div class="table-responsive">
+                                            <table class="table prices-table">
+                                                <tr class="price-row" data-id="56">
+                                                    <td class="services">Developer&#039;s working hour</td>
+                                                    <td class="time" data-time="0"></td>
+                                                    <td class="cost" data-price="50" data-percent="0">MYR 50</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="price-row" data-id="57">
+                                                    <td class="services">Designer&#039;s working hour</td>
+                                                    <td class="time" data-time="0"></td>
+                                                    <td class="cost" data-price="50" data-percent="0">MYR 50</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="price-row" data-id="58">
+                                                    <td class="services">SEO working hour</td>
+                                                    <td class="time" data-time="0"></td>
+                                                    <td class="cost" data-price="50" data-percent="0">MYR 50</td>
+                                                    <td class="order-quantity">
+                                                        <div class="input-group spinner">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn minus"
+                                                                    type="button">-</button>
+                                                            </span>
+                                                            <input type="text" class="form-control quantity-chosen"
+                                                                value="0">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default quantity-btn plus"
+                                                                    type="button">+</button>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2>Need a discount</h2>
+                            <div class="text text-1">We consider special conditions for start-ups</div>
+                            <table class="table prices-table">
+                                <tr>
+                                    <td class="services">
+                                        <div class="checkbox">
+                                            <label class="checkbox-form"><input id="discount" type="checkbox"> This is a
+                                                start-up (minimal discount 10%)</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- Modal
+                            ================================================== -->
+
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                                aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close"></button>
+                                    <div class="modal-content pop-up">
+                                        <div class="modal-body pop-up-content">
+                                            <h2>PROJECT APPLICATION</h2>
+                                            <div class="text">
+                                                <p>Project application with the approximate budget of <span><i
+                                                            class="total-sum">0</i></span>.</p>
+                                                <p>Please leave us your details and we will get in touch with you.</p>
+                                            </div>
+                                            <form method="POST" action="#" accept-charset="UTF-8" class=""
+                                                id="jvalidate" role="form"><input name="_token" type="hidden"
+                                                    value="GQHEhK36HkFz4TSf9KLWE4LHSWAeUcKs02eIc6pq">
+                                                <input class="form-control" placeholder="Your name" name="user_name"
+                                                    type="text">
+                                                <input class="form-control" placeholder="Your email address"
+                                                    name="user_email" type="text">
+                                                <input class="form-control" name="subject" type="hidden">
+                                                <textarea class="form-control" placeholder="Tell us about your project"
+                                                    name="message" cols="50" rows="10"></textarea>
+                                                <div class="form-group pop-msg">
+                                                    <div class="col-md-12">
+                                                        <div class="alert alert-success" role="alert"
+                                                            style="display: none;">Success! You message has been sent
+                                                        </div>
+                                                        <div class="alert alert-danger" role="alert"
+                                                            style="display: none;">
+                                                            <div class="alert-text"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input class="btn btn-lg" type="submit" value="SEND AN APPLICATION">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+
+                    <!-- Sidebar
+                    ================================================== -->
+
+                    <div class="col-md-4 column-sidebar">
+                        <aside class="sidebar">
+                            <div class="sidebar-order">
+                                <div class="heading clearfix">
+                                    <a href="#">Get in touch</a>
+                                    <div class="name">TOTAL AMOUNT</div>
+                                </div>
+                                <div class="line">
+                                    <div class="services">Development cost</div>
+                                    <div class="details">$<span class="total-sum">0</span></div>
+                                </div>
+                                <div class="line">
+                                    <div class="services">Time</div>
+                                    <div class="details"><span class="total-time">0</span> days</div>
+                                </div>
+                                <div class="btn btn-lg" data-toggle="modal" data-target="#myModal">SEND AN APPLICATION
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer
+        ================================================== -->
+
+        <footer>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="footer-copyright">
+                        <div class="copyright">
+                            <div>Copyright &copy; 2022 <a href="#">Konti Studio</a></div>
+                            <div>All Rights Reserved.</div>
+                        </div>
+                    </div>
+                    <div class="footer-buttons">
+                        <div class="button-group">
+                            <a href="#" class="btn btn-blue">VIEW PRICES</a> <a href="#" class="btn">Get in
+                                touch</a>
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <div class="social-icons">
+                            <a href="#" class="fb" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+                            <a href="#" class="twit" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+                            <a href="#" class="in" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <aside class="main-menu">
+        <div class="main-menu-wrapper scroll">
+            <i class="close-bar"></i>
+            <div class="navigation nav-section">
+                <div class="title">Navigation</div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+
+    <!-- Javascripts
+    ================================================== -->
+
+    <script>
+        var baseUrl = 'index.html';
+        var subscribeFormRules = { "email": { "required": true, "minlength": "3", "maxlength": "100" } };
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+        integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha512-oBTprMeNEKCnqfuqKd6sbvFzmFQtlXS3e0C/RGFV0hD6QzhHV+ODfaQbAlmY6/q0ubbwlAM/nCJjkrgA3waLzg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"
+        integrity="sha512-WY7Piz2TwYjkLlgxw9DONwf5ixUOBnL3Go+FSdqRxhKlOqx9F+ee/JsablX84YBPLQzUPJsZvV88s8YOJ4S/UA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"
+        integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
+        integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA=="
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/2.8.7/jquery.mCustomScrollbar.min.js"
+        integrity="sha512-mv7wBTDNfe7h8//peW+IEVjIpIQWCYdyYiwAKmOlnUzK3/O662UBRfGsZ+MEA+RxoTXUfBejfT+YPOzcsMFDCw=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"
+        integrity="sha512-MAhdSIQcK5z9i33WN0KzveJUhM2852CJ1lJp4o60cXhQT20Y3friVRdeZ5TEWz4Pi+nvaQqnIqWJJw4HVTKg1Q=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQueryFormStyler/1.7.8/jquery.formstyler.min.js"
+        integrity="sha512-zUbF8YJnAnVM/BysJpAjZ0YSwaopcukS6MHnnJ97hfRt4Ilu5q6C/VnKKEGEc3pYUJ2Ao5kZ/4e9x0uaES9Qhw=="
+        crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
+
+
+<!-- Last edited on : Thu 12:59 20 July 2017
+================================================== -->
